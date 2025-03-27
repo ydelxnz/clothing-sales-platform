@@ -44,13 +44,6 @@ export default function Home() {
     }
   }, [])
 
-  const stats = [
-    { label: "销售预测准确率", value: `${count}%`, icon: <LineChart className="h-4 w-4" /> },
-    { label: "库存周转率提升", value: "3.2x", icon: <Activity className="h-4 w-4" /> },
-    { label: "利润率增长", value: "24%", icon: <TrendingUp className="h-4 w-4" /> },
-    { label: "客户满意度", value: "96%", icon: <ShoppingBag className="h-4 w-4" /> },
-  ]
-
   const testimonials = [
     {
       quote: "Prophet 驱动的定价策略帮助我们在季节性促销中提高了 30% 的销售额，同时保持了健康的利润率。",
@@ -108,21 +101,6 @@ export default function Home() {
                 </Link>
               </div>
 
-              {/* 统计数据 */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6">
-                {stats.map((stat, index) => (
-                  <div
-                    key={index}
-                    className={`bg-card rounded-lg p-3 border transition-all duration-1000 delay-${index * 200} ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
-                  >
-                    <div className="flex items-center gap-2 text-primary mb-1">
-                      {stat.icon}
-                      <span className="text-xs font-medium">{stat.label}</span>
-                    </div>
-                    <p className="text-2xl font-bold">{stat.value}</p>
-                  </div>
-                ))}
-              </div>
             </div>
 
             <div
